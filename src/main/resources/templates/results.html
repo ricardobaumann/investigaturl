@@ -1,0 +1,12 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<body>
+Perfect
+<table>
+<th:block th:each="entry : ${resultForm.entries}">
+    <tr>
+        <td th:text="${entry}"></td>
+    </tr>
+</th:block>
+</table>
+</body>
+</html>
