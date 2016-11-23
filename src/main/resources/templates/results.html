@@ -1,0 +1,57 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<body>
+<table>
+
+    <tr>
+        <td><strong>URL</strong></td>
+        <td th:text="${inputForm.url}"></td>
+    </tr>
+
+    <tr>
+        <td><strong>HTML Version</strong></td>
+        <td th:text="${resultForm.urlData.htmlVersion}"></td>
+    </tr>
+
+    <tr>
+        <td><strong>Page Title</strong></td>
+        <td th:text="${resultForm.urlData.pageTitle}"></td>
+    </tr>
+
+    <tr>
+        <td><strong>Internal Links</strong></td>
+        <td th:text="${resultForm.urlData.internalLinks}"></td>
+    </tr>
+
+    <tr>
+        <td><strong>External Links</strong></td>
+        <td th:text="${resultForm.urlData.externalLinks}"></td>
+    </tr>
+
+    <tr>
+        <td><strong>Contains Login Form</strong></td>
+        <td th:text="${resultForm.urlData.containLoginForm}"></td>
+    </tr>
+
+    <tr>
+        <td valign="top"><strong>Headings</strong></td>
+        <td>
+            <table>
+                <tr>
+                    <td align="right"><strong>Level</strong></td>
+                    <td align="right"><strong>Amount</strong></td>
+                </tr>
+                <th:block th:each="heading : ${resultForm.urlData.headingLevels}">
+                    <tr>
+                        <td align="right" th:text="${heading.key}"></td>
+                        <td align="right" th:text="${heading.value}"></td>
+                    </tr>
+                </th:block>
+
+            </table>
+        </td>
+    </tr>
+
+</table>
+<a th:href="@{/}">Back</a>
+</body>
+</html>
