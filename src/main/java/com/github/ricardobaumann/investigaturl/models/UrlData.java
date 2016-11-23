@@ -5,6 +5,7 @@ import lombok.Data;
 import java.util.Map;
 
 /**
+ * Model to hold the url's extracted data
  * Created by ricardobaumann on 22/11/16.
  */
 @Data

@@ -30,6 +30,11 @@ public class UrlDataServiceTest {
     public void extractFrom() throws Exception {
         UrlData urlData = urlDataService.extractFrom("http://github.com/login");
         assertThat(urlData.getPageTitle(),is("Sign in to GitHub · GitHub"));
+        assertThat(urlData.getHtmlVersion(),is("[name=\"html\", publicId=\"\", systemId=\"\"]"));
+        assertThat(urlData.getInternalLinks(),is(5));
+        assertThat(urlData.getExternalLinks(),is(5));
+        assertThat(urlData.getHeadingLevels().get(1),is(1));
+        assertThat(urlData.getContainLoginForm(),is(true));
     }
 
 }

@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.util.Arrays;
 
 /**
+ * Controller and routes handler
  * Created by ricardobaumann on 22/11/16.
  */
 @Controller
@@ -31,6 +32,8 @@ public class UrlController extends WebMvcConfigurerAdapter {
 
     @GetMapping("/")
     public String showInputForm(InputForm inputForm) {
+        inputForm.setUrl("http://github.com/login");//Just a default value to help
+
         return "input";
     }
 
@@ -41,7 +44,6 @@ public class UrlController extends WebMvcConfigurerAdapter {
             return "input";
         }
 
-        resultForm.setEntries(Arrays.asList("jey","ho"));
         resultForm.setInputForm(inputForm);
         resultForm.setUrlData(urlDataService.extractFrom(inputForm.getUrl()));
 

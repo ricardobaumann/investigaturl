@@ -9,14 +9,13 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * DTP to print the results on the results page
  * Created by ricardobaumann on 22/11/16.
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class ResultForm {
-
-    private List<String> entries;
 
     private InputForm inputForm;
 
